@@ -23,7 +23,7 @@ directory_exists(){
   fi
 }
 
-# if ! command_exists nvm ; then
-#   export NVM_DIR="$HOME/.nvm"
-#   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# fi
+load_nvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+}

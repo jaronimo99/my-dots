@@ -19,3 +19,6 @@ echo "Skipping Mac settings"
 
 echo "setting up npm"
 sh $PWD/scripts/npm.sh
+
+echo "setting up yarn"
+sh $PWD/scripts/yarn.sh

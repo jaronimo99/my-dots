@@ -5,9 +5,9 @@
     <key>Label</key>
     <string>com.brew-update.app</string>
     <key>UserName</key>
-    <string>rizowski</string>
+    <string>jaronimo</string>
     <key>Program</key>
-    <string>/Users/rizowski/git/personal/dot/scripts/brew-update.sh</string>
+    <string>/Users/jaronimo/code/github/personal/my-dots/scripts/brew-update.sh</string>
     <key>RunAtLoad</key>
     <true/>
   </dict>
