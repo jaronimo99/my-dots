@@ -15,6 +15,14 @@ file_exists(){
   fi
 }
 
+directory_exists(){
+  if [ -d "$HOME/$1" ] ; then
+    true
+  else
+    false
+  fi
+}
+
 # if ! command_exists nvm ; then
 #   export NVM_DIR="$HOME/.nvm"
 #   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

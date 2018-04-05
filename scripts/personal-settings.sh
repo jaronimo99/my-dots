@@ -33,7 +33,7 @@ if ! file_exists .gitconfig ; then
 fi
 
 if ! file_exists .gitconfig-work ; then
-  link_dot_file gitconfig-work
+  link_dot_file gitconfig-salt
 fi
 
 if ! file_exists .editorconfig ; then
@@ -42,4 +42,16 @@ fi
 
 if ! file_exists .eslintrc ; then
   link_dot_file eslintrc
+fi
+
+if ! directory_exists .aws ; then
+  mkdir $HOME/.aws
+fi
+
+if ! file_exists .aws/credentials ; then
+  ln -s $PWD/files/aws-crednetials $HOME/.aws/credentials
+fi
+
+if ! file_exists .aws/config ; then
+  ln -s $PWD/files/aws-config $HOME/.aws/config
 fi

@@ -1,29 +1,57 @@
 [alias]
   co = checkout
-  st = status
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   la = !git lg --all
+  amend = commit --amend
+  br = branch
+  cob = checkout -b
+  cm = commit
+  cmm = commit -m
+  ds = diff --staged -C
+  fa = fetch --all
+  ff = merge --ff-only
+  fu = fetch upstream
+  fixup = commit --amend --no-edit
+  fpr = "!f() { git fetch origin refs/pull/$1/head:pr/$1; } ; f"
+  l = !git lg -10
+  l2 = !git lg -20
+  la = !git lg --all
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  prune-all = !git remote | xargs -n 1 git remote prune $1
+  st = status
+  sl = stash list
+  ss = "!if test -z $1; then set -- 0; fi; git show --stat stash@{$1} && git show --stat stash@{$1}^3 2>/dev/null || echo No untracked files -"
+  sp = "!if test -z $1; then set -- 0; fi; git stash show -p stash@{$1} && git show stash@{$1}^3 2>/dev/null || echo '\n\nNo untracked files -'"
+  undo = reset --soft HEAD^
+  standup = "!git lg --since yesterday --author \"$(git config user.name)\" --all"
+  backup = "!git checkout -b backup-$(date +\"%Y-%m-%d_%H-%M-%S\")-$(git symbolic-ref --short HEAD); git checkout -; git lg -4"
+  date = "!git commit --amend --no-verify --no-edit --date=\"$(date)\""
+
 [remote "origin"]
   fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+
 [merge]
   keepBackup = false
   tool = p4merge
+
 [mergetool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$PWD/$BASE\"" "\"$PWD/$REMOTE\"" "\"$PWD/$LOCAL\"" "\"$PWD/$MERGED\""
   keepTemporaries = false
   trustExitCode = false
   keepBackup = false
+
 [diff]
   tool = p4merge
+
 [difftool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$REMOTE\"" "\"$LOCAL\""
+
 [commit]
   gpgsign = true
 
 [user]
-  name = Colten Rouska
-  email = crouska@gmail.com
-  signingkey = F5C4A8AEAA463AD9879DB149F82640A0AEC7A210
+  name = Jaron Briggs
+  email = jaronbriggs@gmail.com
 
-[includeIf "gitdir:~/git/vs/**"]
+[includeIf "gitdir:~/git/salt/**"]
   path = ~/.gitconfig-work
