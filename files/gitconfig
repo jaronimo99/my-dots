@@ -47,11 +47,12 @@
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$REMOTE\"" "\"$LOCAL\""
 
 [commit]
-  gpgsign = true
+	gpgsign = true
 
 [user]
   name = Jaron Briggs
-  email = jaronbriggs@gmail.com
+  email = jaron@jaronbriggs.com
+	signingkey = F947B36B466065E2
 
 [includeIf "gitdir:~/git/salt/**"]
-  path = ~/.gitconfig-work
+  path = ~/.gitconfig-salt

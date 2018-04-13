@@ -56,14 +56,13 @@ cask "visual-studio-code"
 cask "ynab"
 cask "caskroom/fonts/font-fira-code"
 
-mas "Affinity Photo", id: 824183456
-mas "Airmail 3", id: 918858936
-mas "DaisyDisk", id: 411643860
-mas "Deliveries", id: 924726344
-mas "Fantastical 2", id: 975937182
-mas "Gemini 2", id: 1090488118
+#mas "Affinity Photo", id: 824183456
+#mas "Airmail 3", id: 918858936
+#mas "DaisyDisk", id: 411643860
+#mas "Deliveries", id: 924726344
+#mas "Fantastical 2", id: 975937182
+#mas "Gemini 2", id: 1090488118
 mas "GIF Brewery 3", id: 1081413713
 mas "Magnet", id: 441258766
 mas "Trello", id: 1278508951
 mas "WhatsApp", id: 1147396723
-mas "OneNote" id: 784801555
